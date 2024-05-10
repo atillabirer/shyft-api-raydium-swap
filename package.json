@@ -1,0 +1,23 @@
+{
+  "name": "shyft-swap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsx src/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tsx": "^4.9.3",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "@project-serum/serum": "^0.13.65",
+    "@raydium-io/raydium-sdk": "1.3.1-beta.52",
+    "@solana/web3.js": "^1.91.8",
+    "graphql-request": "^6.1.0"
+  }
+}
