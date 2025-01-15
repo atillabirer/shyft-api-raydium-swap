@@ -6,8 +6,12 @@ import {
   TxVersion,
 } from "@raydium-io/raydium-sdk";
 import { Connection, Keypair, PublicKey, clusterApiUrl } from "@solana/web3.js";
+import bs58 from "bs58";
 
-export const wallet = new Keypair(); // INSERT YOUR WALLET HERE
+//phantom private key format
+export const wallet = Keypair.fromSecretKey(
+  bs58.decode("5MaiiCavjCmn9Hs1o3eznqDEhRwxo7pXiAYez7keQUviUkauRiTMD8DrESdrNjN8zd9mTmVhRvBJeg5vhyvgrAhG")
+);
 
 export const connection = new Connection(clusterApiUrl("mainnet-beta"));
 

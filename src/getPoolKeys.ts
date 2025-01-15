@@ -94,6 +94,7 @@ export async function addMarketInfo(pool: any) {
     undefined,
     marketProgramPubKey
   );
+   // @ts-ignore
   const marketInfo = market?._decoded;
 
   //Fetch market authority
@@ -116,6 +117,7 @@ export async function addMarketInfo(pool: any) {
     authority: Liquidity.getAssociatedAuthority({
       programId: account!.owner,
     }).publicKey.toString(),
+     // @ts-ignore
     marketAuthority: associatedAuthority?.publicKey,
     marketProgramId: marketProgramPubKey,
     version: 4,

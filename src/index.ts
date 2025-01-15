@@ -18,9 +18,14 @@ import { buildAndSendTx, getWalletTokenAccount } from "./util";
 
 async function main() {
   // ammId for raydium v4 pools
+  const walletTokenAccounts = await getWalletTokenAccount(
+    connection,
+    wallet.publicKey
+  );
   const poolId = "58oQChx4yWmvKdwLLZzBi4ChoCc2fqCUWBkwMihLYQo2"; //WSOL-USDC
   const pool = await getPoolInfo(poolId);
   const poolAndMarketInfo = await addMarketInfo(
+     // @ts-ignore
     pool!.Raydium_LiquidityPoolv4[0]
   );
 
@@ -28,10 +33,7 @@ async function main() {
   const outputToken = DEFAULT_TOKEN.USDC; // USDC
   const inputTokenAmount = new TokenAmount(inputToken, 1);
   const slippage = new Percent(1, 100);
-  const walletTokenAccounts = await getWalletTokenAccount(
-    connection,
-    wallet.publicKey
-  );
+ 
 
   if (pool && poolAndMarketInfo) {
     const parsedPoolKeys = jsonInfo2PoolKeys(poolAndMarketInfo);
